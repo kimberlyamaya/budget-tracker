@@ -30,8 +30,10 @@ function saveRecord(transaction) {
   // on IDBDatabase : one of the specified object stores
   // was not found
 
+    const db = request.result
+
     // create transaction 
-    const transaction = db.transaction(['new_transaction'], 'readwrite')
+    let transaction = db.transaction(['new_transaction'], 'readwrite')
   
     const budgetObjectStore = transaction.objectStore('new_transaction')
   
@@ -41,9 +43,11 @@ function saveRecord(transaction) {
 
 function uploadTransaction() {
 
-  const transaction = db.transaction(['new_transaction'], 'readwrite')
+  const db = request.result
 
-  const budgetObjectStore = transaction.objectStore('new_transaction')
+  let transaction = db.transaction(['new_transaction'], 'readwrite')
+
+  let budgetObjectStore = transaction.objectStore('new_transaction')
 
   const getAll = budgetObjectStore.getAll()
 
