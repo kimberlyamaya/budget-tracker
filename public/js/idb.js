@@ -24,26 +24,18 @@ request.onerror = function(event) {
 }
 
 // save when offline
-function saveRecord(transaction) {
-  // tried to pass record in function in place of transaction
-  // would get DOMException: Failed to execute 'transaction'
-  // on IDBDatabase : one of the specified object stores
-  // was not found
-
-    const db = request.result
+function saveRecord(record) {
 
     // create transaction 
     let transaction = db.transaction(['new_transaction'], 'readwrite')
   
     const budgetObjectStore = transaction.objectStore('new_transaction')
   
-    budgetObjectStore.add(transaction)
+    budgetObjectStore.add(record)
       // tried to pass record in function in place of transaction
 }
 
 function uploadTransaction() {
-
-  const db = request.result
 
   let transaction = db.transaction(['new_transaction'], 'readwrite')
 
@@ -84,4 +76,4 @@ function uploadTransaction() {
 }
 
 // listen for app coming back online
-window.addEventListener('online', uploadTransaction())
+window.addEventListener('online', uploadTransaction)
