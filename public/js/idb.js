@@ -44,8 +44,10 @@ function uploadTransaction() {
   const getAll = budgetObjectStore.getAll()
 
   getAll.onsuccess = function() {
+    // console.log("**line47**")
     // if there was data in indexedDb's store, let's send it to the api server
     if (getAll.result.length > 0) {
+      // console.log("**line50**")
       fetch('/api/transaction', {
         method: 'POST',
         body: JSON.stringify(getAll.result),
@@ -60,6 +62,7 @@ function uploadTransaction() {
             throw new Error(serverResponse)
           }
 
+          console.log("**line65**")
           const transaction = db.transaction(['new_transaction'], 'readwrite')
 
           const budgetObjectStore = transaction.objectStore('new_transaction')
@@ -76,4 +79,7 @@ function uploadTransaction() {
 }
 
 // listen for app coming back online
-window.addEventListener('online', uploadTransaction)
+window.addEventListener('online', () => {
+  // console.log("**inside new function**")
+  uploadTransaction()
+})
