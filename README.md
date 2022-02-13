@@ -17,7 +17,7 @@
   3. Run 'npm install' in the terminal to install npm to create the necessary dependencies
   
   ## Usage
-  # on local machine
+  ### on local machine
   1. Open command line and type npm start  
   2. Navigate to the browser and go to: http://localhost:3001  
   3. You may add transactions while online by entering a transaction name, transaction amount and press add or subtract funds  
@@ -29,7 +29,7 @@
   9. An alert will appear stating all transactions have been submitted  
   10. The newly added transaction persists on the list  
 
-  # on Heroku
+  ### on Heroku
   1. Follow this link to the application: https://mighty-citadel-92179.herokuapp.com/  
   2. You may add transactions while online by entering a transaction name, transaction amount and press add or subtract funds  
   3. To go offline open chrome dev tools  
