@@ -30,7 +30,7 @@
   10. The newly added transaction persists on the list  
 
   # on Heroku
-  1. Follow this link to the application: https://secure-dusk-47715.herokuapp.com/  
+  1. Follow this link to the application: https://mighty-citadel-92179.herokuapp.com/  
   2. You may add transactions while online by entering a transaction name, transaction amount and press add or subtract funds  
   3. To go offline open chrome dev tools  
   4. Navigate to the application tab, check mark offline in the service workers  
